@@ -1,0 +1,7 @@
+setup.py
+braids/__init__.py
+braids/braid.py
+braids.egg-info/PKG-INFO
+braids.egg-info/SOURCES.txt
+braids.egg-info/dependency_links.txt
+braids.egg-info/top_level.txt
