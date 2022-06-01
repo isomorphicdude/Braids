@@ -11,9 +11,13 @@ class braid(object):
         - word: a np array of integers e.g. [1,-2,3]=sigma_1 sigma_2^{-1} sigma_3
         """
         self.word = word
+        self.pos = [] # the positive form using Garside's braid \Delta
     
     def __str__(self):
-        pass
+        return " ".join(str(self.word))
+
+    def __repr__(self):
+        return type(self).__name__ + "("+repr(self.word)+")"      
 
     def isreduced(self):
         """Checks if word is reduced."""
@@ -22,7 +26,7 @@ class braid(object):
     def maingen(self):
         """Returns the main generator. (min index)"""
         a = self.word[0]
-        for i in range(self.word):
+        for i in range(len(self.word)):
             m = self.word[i]
             if abs(m)<a and -1*m in self.word:
                 a = m
@@ -44,6 +48,7 @@ class braid(object):
         
     def handle(self):
         """Returns the outermost handle in a word."""
+        pass
 
 
 
