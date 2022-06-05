@@ -35,7 +35,7 @@ Thus, to determine if two braids $\omega, \omega'$ are equal, we can remove all 
 
 A $\sigma_j-$ *handle* is a word of the form $\sigma_j^e v \sigma_j^{-e}$, $v$ does not contain $\sigma_j$. A *main handle* is defined similarly for minimal $j$.  
 
-Note that if a $\sigma_j-$handle does not contain a $\sigma_{j+1}-$handle then the word is *permitted*(we can proceed).   
+Note that if a $\sigma_j$-handle does not contain a $\sigma_{j+1}$-handle then the word is *permitted*(we can proceed).   
 
 ### Algorithm  
 
