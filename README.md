@@ -90,7 +90,7 @@ Given a word $\omega$ in the generators $\sigma_1, \cdots , \sigma_{n-1}$,  we w
 
 A brute-force search listing all possible shorter words can be used for verification.  
 
-In 1991 Patterson and Razborov proved that this problem is *$NP$ -complete*, which means if we were able to find an algorithm of $\mathcal{O}(p(|\omega|))$, then we would have shown $P=NP$.  
+In 1991 Patterson and Razborov proved that this problem is *$NP-$complete*, which means if we were able to find an algorithm of $\mathcal{O}(p(|\omega|))$, then we would have shown $P=NP$.  
 
 ## To Do:  
 
