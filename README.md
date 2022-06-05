@@ -33,7 +33,7 @@ To solve the word problem, Dehornoy noted that every braid admits a *reduced* fo
 
 Thus, to determine if two braids $\omega, \omega'$ are equal, we can remove all the handles in $\omega \omega'$ and compare it with the trivial braid.   
 
-A *$\sigma_j-$handle* is a word of the form $\sigma_j^e v \sigma_j^{-e}$, $v$ does not contain $\sigma_j$. A *main handle* is defined similarly for minimal $j$.  
+A $\sigma_j-$ *handle* is a word of the form $\sigma_j^e v \sigma_j^{-e}$, $v$ does not contain $\sigma_j$. A *main handle* is defined similarly for minimal $j$.  
 
 Note that if a $\sigma_j-$handle does not contain a $\sigma_{j+1}-$handle then the word is *permitted*(we can proceed).   
 
@@ -90,7 +90,7 @@ Given a word $\omega$ in the generators $\sigma_1, \cdots , \sigma_{n-1}$,  we w
 
 A brute-force search listing all possible shorter words can be used for verification.  
 
-In 1991 Patterson and Razborov proved that this problem is *$NP-$complete*, which means if we were able to find an algorithm of $\mathcal{O}(p(|\omega|))$, then we would have shown $P=NP$.  
+In 1991 Patterson and Razborov proved that this problem is $NP-$*complete*, which means if we were able to find an algorithm of $\mathcal{O}(p(|\omega|))$, then we would have shown $P=NP$.  
 
 ## To Do:  
 
