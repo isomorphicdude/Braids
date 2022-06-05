@@ -61,7 +61,7 @@ We define the fundamental braid as $\Delta:=(\sigma_1 \cdots \sigma_{n-1})(\sigm
   
 - Move all $\Delta$ to the left end and obtain the form $\omega=\Delta^r \omega'=\Delta^r B_1 \cdots B_n$, $B_i \in S_n^+$  
 
-- Check if for each $i$, we have $S(B_{i+1})\sube F(B_i)$  
+- Check if for each $i$, we have $S(B_{i+1})\subset F(B_i)$  
 - If so, then this admits a *left-weighted factorisation*, which is unique  
 - Else, find first $i$, s.t. $S(B_{i+1})\nsubseteq F(B_i)$, replace with $C_{i}=B_i\sigma_j, C_{i+1}=\sigma_j^{-1}B_{i+1}$, for $j \in S(B_{i+1})$, repeat for all such $j$; note this process eventually terminates as for a fixed total weight.  
 - Repeat the three steps above.  
@@ -90,7 +90,7 @@ Given a word $\omega$ in the generators $\sigma_1, \cdots , \sigma_{n-1}$,  we w
 
 A brute-force search listing all possible shorter words can be used for verification.  
 
-In 1991 Patterson and Razborov proved that this problem is *$NP$-complete*, which means if we were able to find an algorithm of $\mathcal{O}(p(|\omega|))$, then we would have shown $P=NP$.  
+In 1991 Patterson and Razborov proved that this problem is *$NP$ -complete*, which means if we were able to find an algorithm of $\mathcal{O}(p(|\omega|))$, then we would have shown $P=NP$.  
 
 ## To Do:  
 
