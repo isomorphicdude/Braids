@@ -78,11 +78,19 @@ We write the conjugacy class for a word $\omega$ as $[\omega]$.
 
 ## 2.1 The Super Summit Set  
 
-We define the *super summit set* of a word $\omega$ as the subset with maximal $\inf$ and minimal $\sup$ w.r.t the partial ordering introduced by Morton et al. This subset is unique w.r.t. the conjugacy class of a braid, thus we can compute this set given two words.  
+We define the *super summit set* of a word $\omega$ as the subset with maximal $\inf$ and minimal $\sup$ w.r.t the partial ordering introduced by Morton et al. This subset is unique w.r.t. the conjugacy class of a braid, thus we can compute this set given two words.   
+
+We remark here that the algorithm is $\mathcal{O}(\exp(|\omega|))$.  
 
 The algorithm is described below:  
 
 - 
+
+## 2.2 Application  in Cryptography  
+
+We note an application of the conjugacy algorithm being exponential.  
+
+
 
 ## 3.0 Non-minimal Braid (for interest)  
 
