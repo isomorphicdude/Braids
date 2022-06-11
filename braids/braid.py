@@ -54,7 +54,10 @@ class braid(object):
         
     def left_handle(self):
         """Returns the leftmost handle in a word."""
-        
+        pass
+
+    def permutation(self):
+        """The permutation to which a braid in [0,1] corresponds."""
 
 
 
