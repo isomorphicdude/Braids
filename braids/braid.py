@@ -10,7 +10,7 @@ class braid(object):
         Constructs braid via word.
         - word: a np array of integers e.g. [1,-2,3]=sigma_1 sigma_2^{-1} sigma_3
         """
-        self.word = word
+        self.word = np.array(word)
         self.pos = [] # the positive form using Garside's braid \Delta
     
     def __str__(self):
@@ -25,17 +25,23 @@ class braid(object):
 
     def maingen(self):
         """Returns the main generator. (min index)"""
-        a = self.word[0]
-        for i in range(len(self.word)):
-            m = self.word[i]
-            if abs(m)<a and -1*m in self.word:
-                a = m
-        return a
+        w = abs(self.word)
+        return min(w)
 
     def mainhandle(self):
-        """Returns main handle of the word."""
-        j = self.maingen()
-        
+        """Returns main handle of the word.(if there are multiple, return leftmost one)"""
+        try:
+            out = None
+            j = self.maingen()
+            pos = self.word.index(j)
+            neg = self.word.index(-1*j)
+            if pos > neg:
+                out = self.word[neg:pos+1]
+            else:
+                out = self.word[pos:neg+1]
+            return out
+        except :
+            raise "No handles found"
 
     def isreducible(self):
         """Checks if word is permitted."""
@@ -46,9 +52,9 @@ class braid(object):
             flag = False
         return flag
         
-    def handle(self):
-        """Returns the outermost handle in a word."""
-        pass
+    def left_handle(self):
+        """Returns the leftmost handle in a word."""
+        
 
 
 
