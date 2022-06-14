@@ -39,7 +39,7 @@ Note that if a $\sigma_j$-handle does not contain a $\sigma_{j+1}$-handle then t
 
 ### Algorithm  
 
-- Find the first permitted $\sigma_j^{-e} v \sigma_j^e$
+- Find the leftmost permitted $\sigma_j^{-e} v \sigma_j^e$
 - Apply transformation by 
   - $\sigma_{j}^{\pm 1} \mapsto 1$
   -  $\sigma_{j+1}^{\pm 1} \mapsto \sigma_{j+1}^{-e}\sigma_j^{\pm 1} \sigma_{j+1}^{e}$
@@ -86,10 +86,6 @@ We define the *super summit set* of a word $\omega$ as the subset with maximal $
 
 We remark here that the algorithm is $\mathcal{O}(\exp(|\omega|))$.  
 
-The algorithm is described below:  
-
-- 
-
 ## 2.2 Application  in Cryptography  
 
 We note an application of the conjugacy algorithm being exponential.  
@@ -109,9 +105,7 @@ In 1991 Patterson and Razborov proved that this problem is $NP-$*complete*, whic
 - [ ] `braid` class implementation  
 - [ ] `dehornoy`  implementation
 - [ ] `garside`  implementation  
-- [ ] `garside` implementation details  
-- [ ] Conjugacy algorithm
+- [x] `garside` implementation details  
 - [ ] `isconjugate` method implementation 
 - [ ] Experimenting
 - [ ] Analysis of word problem algorithms
-- [ ] Anlysis of conjugacy problem algorithms

@@ -1,17 +1,16 @@
 """implements Dehornoy's algortihm"""
 
-def dehornoy():
-    """Returns a reduced word with outermost handle removed."""
+def LF(braid):
+    """Returns a reduced word with leftmost handle removed."""
     pass
 
 
 # pseudo-code
 
-# for handles in word: (of the form sigma_j^-1 v sigma_j^1)
-#   handle[-1]. handl[0] = 0
-#   
-#
-#
+# while not fully reduced:
+#   find leftmost handle
+#   reduce using map(in place?)
+#   (note this is always permitted as it ends at the leftmost)
 #
 #
 #
