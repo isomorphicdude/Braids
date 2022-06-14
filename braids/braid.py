@@ -56,6 +56,11 @@ class braid(object):
         
     def left_handle(self):
         """Returns the leftmost handle in a word."""
+        n = len(self.word)
+        j = None
+        for x in self.word:
+            if -1*x in self.word:
+                j = self.word.index(-1*x)
 
          
 
