@@ -68,7 +68,11 @@ We define the fundamental braid as $\Delta:=(\sigma_1 \cdots \sigma_{n-1})(\sigm
 
 ### Implementation Details:  
 
-- 
+- We note that $\pi(i+1) < \pi(i)$ for the permutation braid $A_{\pi}$ is equivalent to $i \in S(A_{\pi})$  
+
+- So it is useful to compute beforehand the corresponding permutations for each braid and note if $\pi(i+1) < \pi(i)$  
+
+- To check if $i \in F(A_{\pi})$, we simply note that $F(A_{\pi})=S({\rm rev} A_{\pi})$, so we repeat the steps above
 
 ## 2 The Conjugacy Problem   
 
