@@ -1,8 +1,7 @@
 """Tools for reducing the braid."""  
 
-import braids
+from braids import braid
 import numpy as np
-from braids import *  
 
 def ispermitted(handle):
     """Checks if a handle is permitted."""
@@ -14,6 +13,12 @@ def ispermitted(handle):
         # print("Not permitted")
     return flag
 
+def zero_reduce(beta):
+    """Removes all empty letters in a word."""
+    w = np.array(beta.word)
+    a = w[w!=0]
+    return braid(a.tolist())
+
 def free_reduce(beta):
     """Freely reduces a word and then returns."""
     w = beta.word
@@ -24,12 +29,6 @@ def free_reduce(beta):
             w[i+1]=0
     return braid(w)
     
-def zero_reduce(beta):
-    """Removes all empty letters in a word."""
-    w = np.array(beta.word)
-    a = w[w!=0]
-    return braid(a.tolist())
-
 def double(beta):
     pass
 

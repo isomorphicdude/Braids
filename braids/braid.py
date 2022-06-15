@@ -42,25 +42,23 @@ class braid(object):
         else:
             print("No main handle found, fully reduced")
 
-    def ispermitted(self, handle):
-        """Checks if a handle is permitted."""
-        flag = True
-        w = handle.word
-        j = abs(w[0])
-        if j+1 in set(w[1:-1]) and -1*j-1 in set(w[1:-1]):
-            flag = False
-            # print("Not permitted")
-        return flag
-
     def isreduced(self):
         """Checks if word is reduced."""
         if not self.mainhandle():
+            # no main handle returns true
             return True
         else:
             return False
 
     def left_handle(self):
-        """Returns the leftmost handle in a word."""
+        """
+        Returns the leftmost handle in a word and its start&end.
+        
+        Parameters:
+            - braid: braid type
+        Returns:
+            - (braid,x,y): a tuple of 3 elements, first being braid, x,y are integers
+        """
         w = self.word
         n = len(w)
         j = n
@@ -73,15 +71,15 @@ class braid(object):
                 if self.word.index(-1*x)<j:
                     j = self.word.index(-1*x)+1
                     k = i
-                    print(f"k is {i}")
-                    print(f"j is {j}")
+                    # print(f"k is {i}")
+                    # print(f"j is {j}")
         if (j+1)<=n-1:
-            out = w[k:j]
-            print(k)
+            out = (w[k:j],k,j)
+            # print(k)
         else:
-            out = w[k:-1]
-            print(k)
-        return braid(out)
+            out = (w[k:-1],k,-1)
+            # print(k)
+        return (braid(out[0]),out[1],out[2])
 
 
     def permutation(self):
