@@ -1,2 +1,4 @@
 **/braids.egg-info/
-**/__pycache__/
+braids/__pycache__
+braids/__pycache__/__init__.cpython-39.pyc
+braids/__pycache__/braid.cpython-39.pyc
