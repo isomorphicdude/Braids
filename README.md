@@ -17,7 +17,7 @@ $$
 
 ## 1 The Word Problem  
 
-A word $\omega$ is $\sigma_1^{e_1}\cdots\sigma_n^{e_n}$, expressed in the generators, where $e_i \in \{1, -1\}$.  
+A word $\omega$ is $\sigma_1^{e_1} \cdots \sigma_n^{e_n}$, expressed in the generators, where $e_i \in \{1, -1\}$.  
 
 For any $\omega, \omega' \in B_n$, we are interested in whether there exists an algorithm determining their equivalence, that is, if there is way to apply fundamental relations described in (1) and basic group operations $\sigma_i \sigma_i^{-1}=\sigma_i^{-1}\sigma_i=1$ to transform one word to another. This is also the algebraic version of braids isoptopy problem.  
 
