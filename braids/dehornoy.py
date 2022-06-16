@@ -7,7 +7,7 @@ from braids import reduction_tools
 def HR(handle):
     """Reduces and returns a handle."""
     # length preserving
-    assert braid.ispermitted(handle)
+    assert braid.ispermitted(braid([0]),handle)
 
     h = handle.word
     j = h[0] # first element
@@ -45,7 +45,8 @@ def dehornoy(beta):
         j = output[2] # end
         h = handle.word
         assert h # assert not non-empty
-        beta[k:j] = HR(handle=handle)
+        beta.word[k:j] = HR(handle=handle).word
+        
         cnt += 1
         # print verbose
         match cnt:

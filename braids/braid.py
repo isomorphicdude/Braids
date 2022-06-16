@@ -16,7 +16,7 @@ class braid(object):
         return " ".join(str(self.word))
 
     def __repr__(self):
-        return type(self).__name__ + "("+repr(self.word)+")"      
+        return type(self).__name__ + "("+repr(self.word)+")"     
 
 
     def maingen(self):
@@ -90,6 +90,7 @@ class braid(object):
             flag = False
             # print("Not permitted")
         return flag
+
 
 
     def permutation(self):
