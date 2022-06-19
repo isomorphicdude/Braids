@@ -4,14 +4,16 @@ from braids import braid
 import numpy as np
 from braids import reduction_tools
 
-def HR(handle):
+def HR(handle: braid):
     """Reduces and returns a handle."""
     # length preserving
     assert braid.ispermitted(braid([0]),handle)
 
     h = handle.word
     j = h[0] # first element
+
     assert j!=0
+
     e = j//abs(j) # sign of exponent
     
     # apply transformation
@@ -29,7 +31,7 @@ def HR(handle):
         h[k:(k+1)] = [-1*e*m,f*abs(j),e*m]
     return braid(h)
 
-def dehornoy(beta):
+def dehornoy(beta, early_termination = 100):
     # pseudo-code
 
     # while not fully reduced:
@@ -41,12 +43,18 @@ def dehornoy(beta):
     while not beta.isreduced():
         output = beta.left_handle()
         handle = output[0]
+
+        # handle reduction
         k = output[1] # start
         j = output[2] # end
-        h = handle.word
-        assert h # assert not non-empty
+
+        assert handle.word # assert not non-empty
+
         beta.word[k:j] = HR(handle=handle).word
-        
+
+        # free reduction
+        reduction_tools.free_reduce(beta)
+        reduction_tools.zero_reduce(beta)
         cnt += 1
         # print verbose
         match cnt:
@@ -56,5 +64,8 @@ def dehornoy(beta):
                 print("100 already")
             case 1000:
                 print("1000 already")
+        if cnt>early_termination:
+            raise RuntimeError(f"{early_termination} already reached!")
+    return beta
                 
 
