@@ -3,13 +3,13 @@
 from braids import braid
 import numpy as np
 
-def zero_reduce(beta):
+def zero_reduce(beta: braid):
     """Removes all empty letters in a word."""
     w = np.array(beta.word)
     a = w[w!=0]
-    return braid(a.tolist())
+    beta.word = a.tolist()
 
-def free_reduce(beta):
+def free_reduce(beta: braid):
     """Freely reduces a word and then returns."""
     w = beta.word
     n = len(w)
@@ -17,7 +17,7 @@ def free_reduce(beta):
         if w[i]+w[i+1]==0:
             w[i]=0
             w[i+1]=0
-    return braid(w)
+    beta.word = w
     
 def double(beta):
     pass
