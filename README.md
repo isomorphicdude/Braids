@@ -103,9 +103,9 @@ In 1991 Patterson and Razborov proved that this problem is $NP-$*complete*, whic
 ## To Do:  
 
 - [x] `braid` class implementation  
-- [ ] `dehornoy`  implementation
+- [x] `dehornoy`  implementation
 - [ ] `garside`  implementation  
 - [x] `garside` implementation details  
 - [ ] `isconjugate` method implementation 
 - [ ] Experimenting
-- [ ] Analysis of word problem algorithms
+
