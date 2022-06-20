@@ -21,6 +21,7 @@ def timer_func(func):
 
     return function_timer
 
+@timer_func
 def test_dehornoy(n,l):
     """Create input w of length n and run dehornoy(w)"""
     w = rnd_new(n,l)

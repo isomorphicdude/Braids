@@ -7,7 +7,7 @@ from braids import reduction_tools
 def HR(handle: braid):
     """Reduces and returns a handle."""
     # length preserving
-    assert braid.ispermitted(braid([0]),handle)
+    # assert braid.ispermitted(braid([0]),handle)
 
     h = handle.word
     j = h[0] # first element
@@ -32,32 +32,35 @@ def HR(handle: braid):
     return braid(h)
 
 def dehornoy(beta, early_termination = 100):
-    # pseudo-code
-
-    # while not fully reduced:
-    #   find leftmost handle
-    #   reduce using map(in place?)
-    #   free_reduce(whole word)
-    #   (note this is always permitted as it ends at the leftmost)
+    """
+    Reduces a braid.
+    Parameters:
+        - beta: a braid word
+        - early_termination: integer maximum 1e6
+    """
     cnt = 0
+    if beta.isreduced():
+        return beta
     while not beta.isreduced() and beta.word:
-        # debugging
-        print(f"Before reduction: {beta.word}")
+        # print(f"Before reduction: {beta.word}")
+
+        if not beta.word:
+            print("Nullstring")
+            break
 
         reduction_tools.free_reduce(beta)
         reduction_tools.zero_reduce(beta)
 
-        if not beta.word:
-            return beta
-
         output = beta.left_handle()
+
         handle = output[0]
 
         # handle reduction
         k = output[1] # start
         j = output[2] # end
 
-        assert handle.word # assert not non-empty
+        if not handle.word:
+            return beta
 
         beta.word[k:j] = HR(handle=handle).word
 
@@ -65,7 +68,7 @@ def dehornoy(beta, early_termination = 100):
         reduction_tools.free_reduce(beta)
         reduction_tools.zero_reduce(beta)
 
-        print(f"After reduction:{beta.word}")
+        # print(f"After reduction:{beta.word}")
         cnt += 1
         # print verbose
         match cnt:
@@ -75,8 +78,13 @@ def dehornoy(beta, early_termination = 100):
                 print("100 already")
             case 1000:
                 print("1000 already")
+            case 10000:
+                print("1e4 already")
+            case 1e5:
+                print("1e5 already")
+            case 1e6:
+                print("1e6 already")
         if cnt>early_termination:
             raise RuntimeError(f"{early_termination} already reached!")
-    return beta
                 
 

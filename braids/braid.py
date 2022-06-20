@@ -40,8 +40,8 @@ class braid(object):
             if not self.ispermitted(out):
                 out = "Handle found is not permitted"
             return out
-        else:
-            print("No main handle found, fully reduced")
+        # else:
+        #     print("No main handle found, fully reduced")
 
     def isreduced(self):
         """Checks if word is reduced."""
@@ -67,8 +67,11 @@ class braid(object):
         n = len(w)
         j = n
         k = 0
-        assert not self.isreduced()
+        # assert not self.isreduced()
 
+        if self.isreduced():
+            print("Already reduced")
+            return (braid(self.word),0,0)
         for i in range(n):
             x = w[i]
             if -1*x in w[i:j]:

@@ -28,6 +28,8 @@ def double(beta):
 
 def rnd_new(n, l):
     """Returns random braid word of length l."""
-    rnd = np.random.randint(-1*(n-1), n-1, l)
+    a = (-1)*(n-1)
+    b = n-1
+    rnd = np.random.randint(a, b, l)
     return braid(rnd.tolist())
     
