@@ -26,7 +26,8 @@ def free_reduce(beta: braid):
 def double(beta):
     pass
 
-def rnd_new(n):
-    """Returns random braid word of length n."""
-    pass
+def rnd_new(n, l):
+    """Returns random braid word of length l."""
+    rnd = np.random.randint(-1*(n-1), n-1, l)
+    return braid(rnd.tolist())
     
