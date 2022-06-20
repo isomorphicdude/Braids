@@ -5,9 +5,13 @@ import numpy as np
 
 def zero_reduce(beta: braid):
     """Removes all empty letters in a word."""
-    w = np.array(beta.word)
-    a = w[w!=0]
-    beta.word = a.tolist()
+    if beta.word:
+        w = np.array(beta.word)
+        a = w[w!=0]
+        beta.word = a.tolist()
+    else:
+        beta.word = [0]
+        print("Nullstring obtained: identity element.")
 
 def free_reduce(beta: braid):
     """Freely reduces a word and then returns."""

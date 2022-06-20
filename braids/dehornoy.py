@@ -40,7 +40,16 @@ def dehornoy(beta, early_termination = 100):
     #   free_reduce(whole word)
     #   (note this is always permitted as it ends at the leftmost)
     cnt = 0
-    while not beta.isreduced():
+    while not beta.isreduced() and beta.word:
+        # debugging
+        print(f"Before reduction: {beta.word}")
+
+        reduction_tools.free_reduce(beta)
+        reduction_tools.zero_reduce(beta)
+
+        if not beta.word:
+            return beta
+
         output = beta.left_handle()
         handle = output[0]
 
@@ -55,6 +64,8 @@ def dehornoy(beta, early_termination = 100):
         # free reduction
         reduction_tools.free_reduce(beta)
         reduction_tools.zero_reduce(beta)
+
+        print(f"After reduction:{beta.word}")
         cnt += 1
         # print verbose
         match cnt:

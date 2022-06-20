@@ -21,6 +21,7 @@ class braid(object):
 
     def maingen(self):
         """Returns the main generator as integer."""
+        assert self.word, "Word is empty"
         w = np.array(self.word)
         m = abs(w)
         return min(m)
@@ -60,6 +61,9 @@ class braid(object):
             - (braid,x,y): a tuple of 3 elements, first being braid, x,y are integers
         """
         w = self.word
+
+        assert self.word, "Word is empty"
+
         n = len(w)
         j = n
         k = 0
@@ -79,7 +83,7 @@ class braid(object):
         else:
             out = (w[k:-1],k,-1)
             # print(k)
-        return (braid(out[0]),out[1],out[2])
+        return (braid(out[0]),out[1],out[2]) 
 
     def ispermitted(self, handle):
         """Checks if a handle is permitted."""
@@ -90,8 +94,6 @@ class braid(object):
             flag = False
             # print("Not permitted")
         return flag
-
-
 
     def permutation(self):
         """The permutation to which a braid in [0,1] corresponds."""
