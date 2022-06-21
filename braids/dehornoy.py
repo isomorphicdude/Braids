@@ -43,7 +43,7 @@ def dehornoy(beta, early_termination = 100):
         return "Early termination"
 
     while beta.word and not beta.isreduced():
-        print(f"Before reduction: {beta.word}")
+        # print(f"Before reduction: {beta.word}")
 
         reduction_tools.free_reduce(beta)
         reduction_tools.zero_reduce(beta) 
@@ -68,7 +68,7 @@ def dehornoy(beta, early_termination = 100):
         reduction_tools.free_reduce(beta)
         reduction_tools.zero_reduce(beta)
 
-        print(f"After reduction:{beta.word}")
+        # print(f"After reduction:{beta.word}")
         cnt += 1
         # print verbose
         match cnt:
