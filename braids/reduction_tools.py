@@ -26,10 +26,20 @@ def free_reduce(beta: braid):
 def double(beta):
     pass
 
-def rnd_new(n, l):
+def rnd_old(n, l):
     """Returns random braid word of length l."""
-    a = (-1)*(n-1)
+    a = (-1)*(n)
     b = n-1
     rnd = np.random.randint(a, b, l)
     return braid(rnd.tolist())
+
+def rnd_new(n, l):
+    rnd = []
+    for i in range(l):
+        if i%2==0:
+            rnd.append(np.random.randint(1,n))
+        else:
+            rnd.append(np.random.randint(1,n)*(-1))
+    return braid(rnd)
+
     

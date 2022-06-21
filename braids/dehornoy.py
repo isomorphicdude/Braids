@@ -40,16 +40,16 @@ def dehornoy(beta, early_termination = 100):
     """
     cnt = 0
     if beta.isreduced():
-        return beta
-    while not beta.isreduced() and beta.word:
-        # print(f"Before reduction: {beta.word}")
+        return "Early termination"
 
-        if not beta.word:
-            print("Nullstring")
-            break
+    while beta.word and not beta.isreduced():
+        print(f"Before reduction: {beta.word}")
 
         reduction_tools.free_reduce(beta)
-        reduction_tools.zero_reduce(beta)
+        reduction_tools.zero_reduce(beta) 
+
+        if not beta.word:
+            break
 
         output = beta.left_handle()
 
@@ -68,12 +68,12 @@ def dehornoy(beta, early_termination = 100):
         reduction_tools.free_reduce(beta)
         reduction_tools.zero_reduce(beta)
 
-        # print(f"After reduction:{beta.word}")
+        print(f"After reduction:{beta.word}")
         cnt += 1
         # print verbose
         match cnt:
-            case 10:
-                print("10 already")
+            # case 10:
+            #     print("10 already")
             case 100:
                 print("100 already")
             case 1000:
@@ -86,5 +86,6 @@ def dehornoy(beta, early_termination = 100):
                 print("1e6 already")
         if cnt>early_termination:
             raise RuntimeError(f"{early_termination} already reached!")
+    return beta
                 
 
