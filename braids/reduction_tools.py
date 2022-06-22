@@ -34,12 +34,20 @@ def rnd_old(n, l):
     return braid(rnd.tolist())
 
 def rnd_new(n, l):
+    """Returns random braid of length l width n"""
     rnd = []
-    for i in range(l):
+    for i in range(l-1):
         if i%2==0:
             rnd.append(np.random.randint(1,n))
         else:
             rnd.append(np.random.randint(1,n)*(-1))
+    rnd_temp = np.array(rnd)
+
+    # ensure there is one handle at least
+    mingen_ind = np.argmin(abs(rnd_temp))
+    
+    rnd.append(-1*rnd[mingen_ind])
+
     return braid(rnd)
 
     
