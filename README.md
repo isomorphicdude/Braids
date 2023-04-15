@@ -23,7 +23,12 @@ For any $\omega, \omega' \in B_n$, we are interested in whether there exists an 
 
 ## 1.1 Dehornoy's Algorithm  
 
-Dehornoy showed that $B_n$ is left oderable, *i.e.* $a<b \implies ca<cb, \forall a,b \in B_n$; this is equivalent to the group $B_n$ having the structure $B_n=P\cup \{1\}\cup P^{-1}$, where $P:=\{a \in B_n: \ 1<a\}$ and $P^{-1}:=\{b \in B_n: \ b<1\}$.  
+Dehornoy showed that $B_n$ is left oderable, *i.e.* $a<b$ implies $ca<cb$, for all $a,b \in B_n$; this is equivalent to the group $B_n$ having the structure 
+$$
+B_n=P\cup \{1\}\cup P^{-1}
+$$  
+
+where $P:=\{a \in B_n: \ 1<a\}$ and $P^{-1}:=\{b \in B_n: \ b<1\}$.  
 
 He defined a *reduced braid* as those with *main generators* ($\sigma_i$ with the smallest index) having only positive/negative exponents.   
 
